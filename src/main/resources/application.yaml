@@ -2,10 +2,10 @@ spring:
   application:
     name: user
   datasource:
-    url: jdbc:mysql://146.148.109.95:3306/UserDatabase?createDatabaseIfNotExist=true&serverTimezone=UTC
+    url: jdbc:mysql://localhost:3306/UserDatabase?createDatabaseIfNotExist=true&serverTimezone=UTC
     driver-class-name: com.mysql.jdbc.Driver
-    username: dev
-    password: dev
+    username: root
+    password:
   jpa:
     hibernate:
       ddl-auto: create
