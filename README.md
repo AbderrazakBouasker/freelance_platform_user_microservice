@@ -19,6 +19,6 @@ docker run -p 9090:8080 --name user-service --network freelance-platform user-se
 
 ### Test the service
 ```bash
-curl http://localhost:9090/users/hello
+curl http://localhost:9090/hello
 ```
 
