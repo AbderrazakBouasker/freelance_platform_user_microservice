@@ -12,6 +12,8 @@ public class PortfolioEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long portfolioId;
+    @OneToOne(mappedBy = "portfolio")
+    private UserEntity user;
     @ManyToMany
     @JoinTable(
             name = "portfolio_skill",

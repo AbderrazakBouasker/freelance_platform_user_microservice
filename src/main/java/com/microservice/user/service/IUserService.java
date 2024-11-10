@@ -2,6 +2,9 @@ package com.microservice.user.service;
 
 import com.microservice.user.dto.UserDto;
 
+import java.util.List;
+import java.util.Optional;
+
 public interface IUserService {
 
     /**
@@ -19,28 +22,24 @@ public interface IUserService {
      */
     void updateUser(UserDto userDto);
 
-    /**
-     * @param userDto
-     */
-    void getUser(UserDto userDto);
 
     /**
-     * @param userDto
+     * @param
      */
-    void getUsers(UserDto userDto);
+    Optional<List<UserDto>> getUsers();
 
     /**
      * @param userid
      */
-    void findUserByUserId(String userid);
+    Optional<UserDto> findUserByUserId(String userid);
 
     /**
      * @param username
      */
-    void findByUserName(String username);
+    Optional<UserDto> findByUserName(String username);
 
     /**
      * @param skillname
      */
-    void findUsersBySkillName(String skillname);
+    Optional<List<UserDto>> findUsersBySkillName(String skillname);
 }

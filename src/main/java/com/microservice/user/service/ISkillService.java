@@ -2,6 +2,9 @@ package com.microservice.user.service;
 
 import com.microservice.user.dto.SkillDto;
 
+import java.util.List;
+import java.util.Optional;
+
 public interface ISkillService {
 
     /**
@@ -22,22 +25,22 @@ public interface ISkillService {
     /**
      * @param skillDto
      */
-    void getSkill(SkillDto skillDto);
+    Optional<SkillDto> getSkill(SkillDto skillDto);
 
     /**
-     * @param skillDto
+     * @param
      */
-    void getSkills(SkillDto skillDto);
+    Optional<List<SkillDto>> getSkills();
 
     /**
      * @param userid
      */
-    void findSkillsByUserId(String userid);
+    Optional<List<SkillDto>> findSkillsByUserId(String userid);
 
     /**
      * @param skillname
      */
-    void findBySkillName(String skillname);
+    Optional<SkillDto> findBySkillName(String skillname);
 
 
 }

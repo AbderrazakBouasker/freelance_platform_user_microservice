@@ -2,26 +2,28 @@ package com.microservice.user.service;
 
 import com.microservice.user.dto.PortfolioDto;
 
+import java.util.Optional;
+
 public interface IPortfolioService {
 
     /**
      * @portfoliodto
      */
-    void addPortfolio(PortfolioDto portfolioDto);
+    void addPortfolio(String username);
 
     /**
      * @portfoliodto
      */
-    void removePortfolio(PortfolioDto portfolioDto);
+    void removePortfolio(String username);
 
     /**
      * @portfoliodto
      */
-    void updatePortfolio(PortfolioDto portfolioDto);
+    void updatePortfolio(PortfolioDto portfolioDto, String username);
 
     /**
      * @portfoliodto
      */
-    void getPortfolio(PortfolioDto portfolioDto);
+    Optional<PortfolioDto> getPortfolio(String username);
 
 }
