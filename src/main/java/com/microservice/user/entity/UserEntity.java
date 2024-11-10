@@ -14,6 +14,7 @@ public class UserEntity {
 
     @Id
     private int userId;
+    private String userName;
     private String firstName;
     private String lastName;
     private String mobileNumber;
