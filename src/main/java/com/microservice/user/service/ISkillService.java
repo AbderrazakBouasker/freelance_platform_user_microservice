@@ -1,31 +1,33 @@
 package com.microservice.user.service;
 
+import com.microservice.user.dto.SkillDto;
+
 public interface ISkillService {
 
     /**
-     * @param skill
+     * @param skillDto
      */
-    void addSkill(String skill);
+    void addSkill(SkillDto skillDto);
 
     /**
-     * @param skill
+     * @param skillDto
      */
-    void removeSkill(String skill);
+    void removeSkill(SkillDto skillDto);
 
     /**
-     * @param skill
+     * @param skillDto
      */
-    void updateSkill(String skill);
+    void updateSkill(SkillDto skillDto);
 
     /**
-     * @param skill
+     * @param skillDto
      */
-    void getSkill(String skill);
+    void getSkill(SkillDto skillDto);
 
     /**
-     * @param skill
+     * @param skillDto
      */
-    void getSkills(String skill);
+    void getSkills(SkillDto skillDto);
 
     /**
      * @param userid

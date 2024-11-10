@@ -1,17 +1,9 @@
-package com.microservice.user.entity;
+package com.microservice.user.dto;
 
-import jakarta.persistence.*;
 import lombok.Data;
 
-import java.time.LocalDateTime;
-
-@Entity
 @Data
-public class UserEntity {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long userId;
+public class UserDto {
     private String userName;
     private String firstName;
     private String lastName;
@@ -21,6 +13,4 @@ public class UserEntity {
     private String profileImage;
     private String role;
     private String accountStatus;
-    @OneToOne
-    private PortfolioEntity portfolio;
 }

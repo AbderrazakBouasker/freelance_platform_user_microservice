@@ -1,8 +1,6 @@
 package com.microservice.user.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToMany;
+import jakarta.persistence.*;
 import lombok.Data;
 
 import java.util.List;
@@ -12,7 +10,8 @@ import java.util.List;
 public class SkillEntity {
 
     @Id
-    private int skillId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long skillId;
     private String skillName;
     private String skillDescription;
     @ManyToMany(mappedBy = "skills")

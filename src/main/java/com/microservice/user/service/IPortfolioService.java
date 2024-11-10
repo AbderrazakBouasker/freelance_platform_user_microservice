@@ -1,25 +1,27 @@
 package com.microservice.user.service;
 
+import com.microservice.user.dto.PortfolioDto;
+
 public interface IPortfolioService {
 
     /**
-     * @param portfolio
+     * @portfoliodto
      */
-    void addPortfolio(String portfolio);
+    void addPortfolio(PortfolioDto portfolioDto);
 
     /**
-     * @param portfolio
+     * @portfoliodto
      */
-    void removePortfolio(String portfolio);
+    void removePortfolio(PortfolioDto portfolioDto);
 
     /**
-     * @param portfolio
+     * @portfoliodto
      */
-    void updatePortfolio(String portfolio);
+    void updatePortfolio(PortfolioDto portfolioDto);
 
     /**
-     * @param portfolio
+     * @portfoliodto
      */
-    void getPortfolio(String portfolio);
+    void getPortfolio(PortfolioDto portfolioDto);
 
 }

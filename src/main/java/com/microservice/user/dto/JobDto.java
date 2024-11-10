@@ -1,11 +1,9 @@
-package com.microservice.user.entity;
+package com.microservice.user.dto;
 
 import lombok.Data;
 
 @Data
-public class JobEntity {
-
-    private Long jobId;
+public class JobDto {
     private String jobTitle;
     private String jobDescription;
     private int jobProviderId;

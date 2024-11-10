@@ -10,7 +10,8 @@ import java.util.List;
 public class PortfolioEntity {
 
     @Id
-    private int portfolioId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long portfolioId;
     @ManyToMany
     @JoinTable(
             name = "portfolio_skill",
