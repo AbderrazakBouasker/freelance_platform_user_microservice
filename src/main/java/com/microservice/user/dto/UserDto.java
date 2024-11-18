@@ -1,6 +1,7 @@
 package com.microservice.user.dto;
 
 import lombok.Data;
+//todo: add a PortfolioDto object to UserDto
 
 @Data
 public class UserDto {

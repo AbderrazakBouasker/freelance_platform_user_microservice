@@ -2,6 +2,7 @@ package com.microservice.user.entity;
 
 import lombok.Data;
 
+//todo: Change int -> Long for jobProviderId and jobReceiverId
 @Data
 public class JobEntity {
 

@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 import java.util.List;
+//todo: dig deeper into jobs @Transient
 
 @Entity
 @Data
