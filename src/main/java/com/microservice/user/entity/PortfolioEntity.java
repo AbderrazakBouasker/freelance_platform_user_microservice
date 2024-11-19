@@ -22,6 +22,9 @@ public class PortfolioEntity {
             inverseJoinColumns = @JoinColumn(name = "skill_id")
     )
     private List<SkillEntity> skills;
+
+    private List<Long> jobIds;
+
     @Transient
     private List<JobEntity> jobs;
 }
