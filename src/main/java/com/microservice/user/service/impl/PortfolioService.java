@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
+//todo: Add fetch Jobs and Skills in PortfolioDto
 @Service
 @AllArgsConstructor
 public class PortfolioService implements IPortfolioService {
