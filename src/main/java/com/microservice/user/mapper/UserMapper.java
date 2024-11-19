@@ -6,6 +6,7 @@ import com.microservice.user.entity.UserEntity;
 public class UserMapper {
 
     public static UserDto mapToUserDto(UserEntity userEntity, UserDto userDto) {
+        userDto.setUserId(userEntity.getUserId());
         userDto.setUserName(userEntity.getUserName());
         userDto.setFirstName(userEntity.getFirstName());
         userDto.setLastName(userEntity.getLastName());
@@ -15,6 +16,7 @@ public class UserMapper {
         userDto.setProfileImage(userEntity.getProfileImage());
         userDto.setRole(userEntity.getRole());
         userDto.setAccountStatus(userEntity.getAccountStatus());
+        userDto.setPortfolio(userEntity.getPortfolio());
         return userDto;
     }
 
@@ -28,6 +30,7 @@ public class UserMapper {
         userEntity.setProfileImage(userDto.getProfileImage());
         userEntity.setRole(userDto.getRole());
         userEntity.setAccountStatus(userDto.getAccountStatus());
+        userEntity.setPortfolio(userDto.getPortfolio());
         return userEntity;
     }
 }

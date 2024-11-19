@@ -1,12 +1,12 @@
 package com.microservice.user.dto;
 
+import com.microservice.user.entity.PortfolioEntity;
 import lombok.Data;
-//todo: add a PortfolioDto object to UserDto
-//todo: expose user id
-//todo: update all the related Code (Mapper,...)
+
 
 @Data
 public class UserDto {
+    private Long userId;
     private String userName;
     private String firstName;
     private String lastName;
@@ -16,4 +16,5 @@ public class UserDto {
     private String profileImage;
     private String role;
     private String accountStatus;
+    private PortfolioEntity portfolio;
 }
