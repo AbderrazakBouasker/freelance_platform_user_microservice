@@ -1,5 +1,6 @@
 package com.microservice.user.service;
 
+import com.microservice.user.dto.ResponseDto;
 import com.microservice.user.dto.UserDto;
 
 import java.util.List;
@@ -10,36 +11,32 @@ public interface IUserService {
     /**
      * @param userDto
      */
-    void addUser(UserDto userDto);
+    ResponseDto addUser(UserDto userDto);
+
+    /**
+     * @param userId
+     */
+    ResponseDto removeUser(Long userId);
 
     /**
      * @param userDto
      */
-    void removeUser(UserDto userDto);
-
-    /**
-     * @param userDto
-     */
-    void updateUser(UserDto userDto);
+    ResponseDto updateUser(UserDto userDto);
 
 
     /**
      * @param
      */
-    Optional<List<UserDto>> getUsers();
+    List<UserDto> getUsers();
 
     /**
      * @param userid
      */
-    Optional<UserDto> findUserByUserId(String userid);
+    Optional<UserDto> findUserByUserId(Long userid);
 
     /**
      * @param username
      */
     Optional<UserDto> findByUserName(String username);
 
-    /**
-     * @param skillname
-     */
-    Optional<List<UserDto>> findUsersBySkillName(String skillname);
 }

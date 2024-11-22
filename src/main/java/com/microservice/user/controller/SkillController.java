@@ -1,8 +1,10 @@
 package com.microservice.user.controller;
 
+import com.microservice.user.dto.ResponseDto;
 import com.microservice.user.dto.SkillDto;
 import com.microservice.user.service.ISkillService;
 import lombok.AllArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -15,33 +17,33 @@ public class SkillController {
 
     private final ISkillService skillService;
 
-    @PostMapping("/add")
-    public void addSkill(@RequestBody SkillDto skillDto) {
-        skillService.addSkill(skillDto);
+    @PostMapping("/{userid}")
+    public ResponseEntity<ResponseDto> addSkill(@PathVariable Long userid, @RequestBody SkillDto skillDto) {
+        return ResponseEntity.ok(skillService.addSkill(userid, skillDto));
     }
 
-    @DeleteMapping("/remove")
-    public void removeSkill(@RequestBody SkillDto skillDto) {
-        skillService.removeSkill(skillDto);
+    @DeleteMapping("/{skillId}")
+    public ResponseEntity<ResponseDto> removeSkill(@PathVariable Long skillId) {
+        return ResponseEntity.ok(skillService.removeSkill(skillId));
     }
 
     @PutMapping("/update")
-    public void updateSkill(@RequestBody SkillDto skillDto) {
-        skillService.updateSkill(skillDto);
+    public ResponseEntity<ResponseDto> updateSkill(@RequestBody SkillDto skillDto) {
+        return ResponseEntity.ok(skillService.updateSkill(skillDto));
     }
 
-    @GetMapping("/all")
-    public Optional<List<SkillDto>> getSkills() {
-        return skillService.getSkills();
+    @GetMapping("/")
+    public ResponseEntity<List<SkillDto>> getSkills() {
+        return ResponseEntity.ok(skillService.getSkills());
     }
 
-    @GetMapping("/{userid}")
-    public Optional<List<SkillDto>> findSkillsByUserId(@PathVariable String userid) {
-        return skillService.findSkillsByUserId(userid);
+    @GetMapping("/user/{userid}")
+    public ResponseEntity<List<SkillDto>> findSkillsByUserId(@PathVariable Long userid) {
+        return ResponseEntity.ok(skillService.findSkillsByUserId(userid));
     }
 
-    @GetMapping("/skillname/{skillname}")
-    public Optional<SkillDto> findBySkillName(@PathVariable String skillname) {
-        return skillService.findBySkillName(skillname);
+    @GetMapping("/{skillId}")
+    public ResponseEntity<Optional<SkillDto>> findBySkillId(@PathVariable Long skillId) {
+        return ResponseEntity.ok(skillService.findBySkillId(skillId));
     }
 }

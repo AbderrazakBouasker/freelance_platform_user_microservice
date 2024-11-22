@@ -12,10 +12,12 @@ import java.util.Optional;
 
 @Repository
 public interface SkillRepository extends JpaRepository<SkillEntity, Long> {
-    //Optional<SkillEntity> findByUserId(Long userId);
-    /*@Query("SELECT s FROM SkillEntity s JOIN s.portfolios p JOIN p.user u WHERE u.userId = :userId")
-    List<SkillEntity> findSkillsByUserId(@Param("userId") int userId);*/
-    @Query("SELECT s FROM SkillEntity s JOIN s.portfolios p JOIN UserEntity u ON u.portfolio = p WHERE u.userId = :userId")
-    Optional<List<SkillEntity>> findSkillsByUserId(@Param("userId") Long userId);
+    // find skills by skill name and user id
+    Optional<SkillEntity> findBySkillNameAndUser_UserId(String skillName, Long userId);
+
+    // find skills by skill name
     Optional<SkillEntity> findBySkillName(String skillName);
+
+    // find skills by user id
+    List<SkillEntity> findByUser_UserId(Long userId);
 }

@@ -1,5 +1,6 @@
 package com.microservice.user.service;
 
+import com.microservice.user.dto.ResponseDto;
 import com.microservice.user.dto.SkillDto;
 
 import java.util.List;
@@ -10,37 +11,36 @@ public interface ISkillService {
     /**
      * @param skillDto
      */
-    void addSkill(SkillDto skillDto);
+    ResponseDto addSkill(Long userId, SkillDto skillDto);
+
+    /**
+     * @param skillId
+     */
+    ResponseDto removeSkill(Long skillId);
 
     /**
      * @param skillDto
      */
-    void removeSkill(SkillDto skillDto);
+    ResponseDto updateSkill(SkillDto skillDto);
 
     /**
-     * @param skillDto
+     * @param skillId
      */
-    void updateSkill(SkillDto skillDto);
-
-    /**
-     * @param skillDto
-     */
-    Optional<SkillDto> getSkill(SkillDto skillDto);
+    Optional<SkillDto> getSkill(Long skillId);
 
     /**
      * @param
      */
-    Optional<List<SkillDto>> getSkills();
+    List<SkillDto> getSkills();
 
     /**
      * @param userid
      */
-    Optional<List<SkillDto>> findSkillsByUserId(String userid);
+    List<SkillDto> findSkillsByUserId(Long userid);
 
     /**
-     * @param skillname
+     * @param skillId
      */
-    Optional<SkillDto> findBySkillName(String skillname);
-
+    Optional<SkillDto> findBySkillId(Long skillId);
 
 }

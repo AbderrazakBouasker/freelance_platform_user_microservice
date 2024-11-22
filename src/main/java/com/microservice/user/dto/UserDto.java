@@ -1,7 +1,9 @@
 package com.microservice.user.dto;
 
-import com.microservice.user.entity.PortfolioEntity;
 import lombok.Data;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Data
@@ -16,5 +18,8 @@ public class UserDto {
     private String profileImage;
     private String role;
     private String accountStatus;
-    private PortfolioEntity portfolio;
+
+    private List<SkillDto> skills = new ArrayList<SkillDto>();
+
+    private List<JobDto> jobs = new ArrayList<JobDto>();
 }

@@ -9,12 +9,14 @@ import java.util.List;
 public class SkillMapper {
 
     public static SkillDto mapToSkillDto(SkillEntity skillEntity, SkillDto skillDto) {
+        skillDto.setSkillId(skillEntity.getSkillId());
         skillDto.setSkillName(skillEntity.getSkillName());
         skillDto.setSkillDescription(skillEntity.getSkillDescription());
         return skillDto;
     }
 
     public static SkillEntity mapToSkillEntity(SkillDto skillDto, SkillEntity skillEntity) {
+        skillEntity.setSkillId(skillDto.getSkillId());
         skillEntity.setSkillName(skillDto.getSkillName());
         skillEntity.setSkillDescription(skillDto.getSkillDescription());
         return skillEntity;

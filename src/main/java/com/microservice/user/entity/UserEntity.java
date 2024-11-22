@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Data
@@ -22,6 +24,11 @@ public class UserEntity {
     private String profileImage;
     private String role;
     private String accountStatus;
-    @OneToOne
-    private PortfolioEntity portfolio = new PortfolioEntity();
+
+    // portfolio
+    @OneToMany(mappedBy = "user")
+    private List<SkillEntity> skills = new ArrayList<SkillEntity>();
+
+    @Transient
+    private List<JobEntity> jobs =  new ArrayList<JobEntity>();
 }

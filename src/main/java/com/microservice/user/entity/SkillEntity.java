@@ -14,6 +14,7 @@ public class SkillEntity {
     private Long skillId;
     private String skillName;
     private String skillDescription;
-    @ManyToMany(mappedBy = "skills")
-    private List<PortfolioEntity> portfolios;
+    @ManyToOne
+    @JoinColumn(name = "userId")
+    private UserEntity user;
 }

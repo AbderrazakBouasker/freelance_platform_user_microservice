@@ -17,39 +17,33 @@ public class UserController {
 
     private final IUserService userService;
 
-    @PostMapping("/add")
+    @PostMapping("/")
     public ResponseEntity<ResponseDto> addUser(@RequestBody UserDto userDto) {
-        userService.addUser(userDto);
-        return ResponseEntity.created(null).body(new ResponseDto("201", "User added successfully"));
+        return ResponseEntity.ok(userService.addUser(userDto));
     }
 
-    @DeleteMapping("/remove")
-    public void removeUser(@RequestBody UserDto userDto) {
-        userService.removeUser(userDto);
+    @DeleteMapping("/{id}")
+    public ResponseEntity<ResponseDto> removeUser(@PathVariable Long id) {
+        return ResponseEntity.ok(userService.removeUser(id));
     }
 
     @PutMapping("/update")
-    public void updateUser(@RequestBody UserDto userDto) {
-        userService.updateUser(userDto);
+    public ResponseEntity<ResponseDto> updateUser(@RequestBody UserDto userDto) {
+        return ResponseEntity.ok(userService.updateUser(userDto));
     }
 
-    @GetMapping("/all")
-    public ResponseEntity<Optional<List<UserDto>>> getUsers() {
+    @GetMapping("/")
+    public ResponseEntity<List<UserDto>> getUsers() {
         return ResponseEntity.ok(userService.getUsers());
     }
 
     @GetMapping("/{userid}")
-    public ResponseEntity<Optional<UserDto>> findUserByUserId(@PathVariable String userid) {
+    public ResponseEntity<Optional<UserDto>> findUserByUserId(@PathVariable Long userid) {
         return ResponseEntity.ok(userService.findUserByUserId(userid));
     }
 
     @GetMapping("/username/{username}")
     public ResponseEntity<Optional<UserDto>> findByUserName(@PathVariable String username) {
         return ResponseEntity.ok(userService.findByUserName(username));
-    }
-
-    @GetMapping("/skill/{skillname}")
-    public ResponseEntity<Optional<List<UserDto>>> findUsersBySkillName(@PathVariable String skillname) {
-        return ResponseEntity.ok(userService.findUsersBySkillName(skillname));
     }
 }
