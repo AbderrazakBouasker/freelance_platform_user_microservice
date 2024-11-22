@@ -16,7 +16,8 @@ public class UserMapper {
         userDto.setProfileImage(userEntity.getProfileImage());
         userDto.setRole(userEntity.getRole());
         userDto.setAccountStatus(userEntity.getAccountStatus());
-        userDto.setPortfolio(userEntity.getPortfolio());
+        userDto.setSkills(SkillMapper.mapToSkillDtoList(userEntity.getSkills()));
+        userDto.setJobs(JobMapper.mapToJobDtoList(userEntity.getJobs()));
         return userDto;
     }
 
@@ -31,7 +32,8 @@ public class UserMapper {
         userEntity.setProfileImage(userDto.getProfileImage());
         userEntity.setRole(userDto.getRole());
         userEntity.setAccountStatus(userDto.getAccountStatus());
-        userEntity.setPortfolio(userDto.getPortfolio());
+        userEntity.setSkills(SkillMapper.mapToSkillEntityList(userDto.getSkills()));
+        userEntity.setJobs(JobMapper.mapToJobEntityList(userDto.getJobs()));
         return userEntity;
     }
 }
