@@ -23,5 +23,5 @@ public class UserEntity {
     private String role;
     private String accountStatus;
     @OneToOne
-    private PortfolioEntity portfolio;
+    private PortfolioEntity portfolio = new PortfolioEntity();
 }

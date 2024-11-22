@@ -6,6 +6,6 @@ import lombok.Data;
 public class JobDto {
     private String jobTitle;
     private String jobDescription;
-    private int jobProviderId;
-    private int jobReceiverId;
+    private Long jobProviderId;
+    private Long jobReceiverId;
 }

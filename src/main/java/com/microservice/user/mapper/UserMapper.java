@@ -21,6 +21,7 @@ public class UserMapper {
     }
 
     public static UserEntity mapToUserEntity(UserDto userDto, UserEntity userEntity) {
+        userEntity.setUserId(userDto.getUserId());
         userEntity.setUserName(userDto.getUserName());
         userEntity.setFirstName(userDto.getFirstName());
         userEntity.setLastName(userDto.getLastName());
