@@ -1,5 +1,32 @@
+#spring:
+#  application:
+#    name: microservice-user
+#  config:
+#    import: configserver:http://localhost:8888
+#TODO: rajja3 bil server
 spring:
-  application:
-    name: microservice-user
-  config:
-    import: configserver:http://localhost:8888
+  datasource:
+    url: jdbc:mysql://localhost:3306/UserDatabase?createDatabaseIfNotExist=true&serverTimezone=UTC
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: root
+  jpa:
+    hibernate:
+      ddl-auto: create
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:9050
+#          jwk-set-uri: http://localhost:9050/.well-known/jwks.json
+server:
+  port: 9000
+
+microservice-job:
+  url: http://localhost:9010
