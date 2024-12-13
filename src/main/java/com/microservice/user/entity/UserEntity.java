@@ -16,6 +16,7 @@ public class UserEntity {
     private Long userId;
     @Column(unique = true)
     private String userName;
+    private String email;
     private String firstName;
     private String lastName;
     private String mobileNumber;

@@ -8,6 +8,7 @@ public class UserMapper {
     public static UserDto mapToUserDto(UserEntity userEntity, UserDto userDto) {
         userDto.setUserId(userEntity.getUserId());
         userDto.setUserName(userEntity.getUserName());
+        userDto.setEmail(userEntity.getEmail());
         userDto.setFirstName(userEntity.getFirstName());
         userDto.setLastName(userEntity.getLastName());
         userDto.setMobileNumber(userEntity.getMobileNumber());
@@ -24,6 +25,7 @@ public class UserMapper {
     public static UserEntity mapToUserEntity(UserDto userDto, UserEntity userEntity) {
         userEntity.setUserId(userDto.getUserId());
         userEntity.setUserName(userDto.getUserName());
+        userEntity.setEmail(userDto.getEmail());
         userEntity.setFirstName(userDto.getFirstName());
         userEntity.setLastName(userDto.getLastName());
         userEntity.setMobileNumber(userDto.getMobileNumber());
